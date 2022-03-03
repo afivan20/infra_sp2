@@ -71,6 +71,10 @@ docker-compose exec web python manage.py dumpdata > fixtures.json
 ```
 docker-compose down -v
 ```
+- Скачать образ с DockerHub:
+```
+docker pull afivan20/api_yamdb:latest
+```
 
 ### Автор
 _Иван Афанасьев, python-devloper_
