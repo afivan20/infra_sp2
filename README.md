@@ -32,7 +32,7 @@ docker-compose exec web python manage.py importcsv
 Ресурс доступен в [http://localhost/](localhost/admin/)
 
 Ознакомиться с документацией по адресу.
-[http://localhost/redoc/](localhost/redoc/)
+[http://localhost/redoc/](тут)
 
 ### Алгоритм получения токена:
 #### 1. Получить код подтвержения.
