@@ -29,10 +29,10 @@ docker-compose exec web python manage.py collectstatic --no-input
 ```
 docker-compose exec web python manage.py importcsv
 ```
-Ресурс доступен в [http://localhost/](localhost/admin/)
+Ресурс доступен в [localhost](http://localhost/)
 
-Ознакомиться с документацией по адресу.
-[http://localhost/redoc/](тут)
+Ознакомиться с документацией - 
+[тут](http://localhost/redoc/)
 
 ### Алгоритм получения токена:
 #### 1. Получить код подтвержения.
