@@ -9,7 +9,7 @@
 git clone https://github.com/afivan20/api_yamdb.git
 cd infra_sp2; cd infra
 ``` 
-- Запустить контейнеры Docker:
+- Запустить контейнеры Docker в папке с файлом docker-compose.yaml:
 ```
 docker-compose up -d --build
 ```
@@ -29,6 +29,38 @@ docker-compose exec web python manage.py collectstatic --no-input
 ```
 docker-compose exec web python manage.py importcsv
 ```
+Войти в админку.
+[localhost/admin/](localhost/admin/)
+
+Ознакомиться с документацией по адресу.
+[localhost/redoc/](localhost/redoc/)
+
+### Алгоритм получения токена:
+#### 1. Получить код подтвержения.
+в теле передать JSON
+{
+  "username": "имя_пользователя",
+  "email": "адрес эл. почты"
+}
+POST-запрос на эндпоинт:
+```
+localhost/api/v1/auth/signup/
+```
+
+
+в папке sent_emails найти письмо и скопировать полученный код подвтерждения.
+
+#### 2. Получить токен.
+в теле передать JSON
+{
+  "username": "имя_пользователя",
+  "confirmation_code": "код_подвтержения"
+}
+POST-запрос на эндпоинт:
+```
+localhost/api/v1/auth/token/
+```
+Использовать полученный токен для авторизации.
 
 ### Дополнительные команды:
 - Создать дамп (резервную копию) базы:
@@ -41,5 +73,5 @@ docker-compose exec web python manage.py dumpdata > fixtures.json
 docker-compose down -v
 ```
 
-*Автор*
+### Автор
 _Иван Афанасьев, python-devloper_
