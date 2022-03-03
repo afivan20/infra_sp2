@@ -35,8 +35,9 @@ class CommentAdmin(admin.ModelAdmin):
     search_fields = ('text',)
     empty_value_display = '-пусто-'
 
+
 class GenreTitleAdmin(admin.ModelAdmin):
-    list_display=('id', 'title_id', 'genre_id' )
+    list_display = ('id', 'title_id', 'genre_id')
 
 
 admin.site.register(User, UserAdmin)
